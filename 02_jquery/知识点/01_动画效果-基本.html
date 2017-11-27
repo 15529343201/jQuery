@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").eq(0).click(function () {
+                $("div").css({
+                    "display":"none",
+                    "height":"200px",
+                    "width":"300px",
+                    "background":"gold"
+                });
+                //让div展示出来
+                //show()
+                //$("div").show(3000);//以毫秒为单位
+                //$("div").show("slow");
+                //$("div").show("fast");
+                //$("div").show("normal");
+
+                //第一个参数是动画时长,可以是数字或者字符串
+                //第二个参数是动画执行完成后,要执行的函数
+                $("div").show(2000,function () {
+                    //alert("show动画执行完毕");
+                    $("div").hide(1000);
+                })
+            });
+
+            $("button:last").click(function () {
+                //让div隐藏
+                $("div").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <div></div>
+</body>
+</html>

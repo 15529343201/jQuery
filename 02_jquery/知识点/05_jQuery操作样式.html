@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <style type="text/css">
+        .divItem{
+            background: #000;
+            color:#fff;
+        }
+        .divItem1{
+            font-size:20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //css
+            /*$("li").css("font-size","18px");
+            $("li").css({
+                "background":"yellow",
+                "color":"white"
+            });
+            var fontSize=$("li").css("font-size");
+            console.log(fontSize);*/
+
+            //给所有li元素添加样式
+            //给选定的元素添加类样式,注意:样式名字没有点。
+            $("li").addClass("divItem");
+            //给指定的元素删除某个样式
+            //有参数的时候,移除指定的样式。如果指定的样式该元素不存在,那么将不删除任何样式
+            //$("li").eq(2).removeClass("divItem");
+
+            //没有参数的话,移除所有的样式
+            //$("li").eq(2).removeClass();
+
+            //切换样式
+            /*$("#demo").click(function () {
+                $("li").eq(2).toggleClass("divItem1");
+            });*/
+
+            //判断有无样式
+            $("#hasBtn").click(function () {
+                //hasClass的返回值为true或者false
+                var hasDivItem1Class=$("li").eq(2).hasClass("divItem1");
+                //console.log(hasDivItem1Class);
+                if(hasDivItem1Class){
+                    //有某个样式
+                    $("li").eq(2).removeClass("divItem1");
+                }else{
+                    $("li").eq(2).addClass("divItem1");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="切换样式" id="demo"/>
+<input type="button" value="判断有没有样式" id="hasBtn"/>
+<ul>
+    <li>元素很多1</li>
+    <li>元素很多2</li>
+    <li class="divItem1">元素很多3</li>
+    <li>元素很多4</li>
+    <li>元素很多5</li>
+    <li>元素很多6</li>
+    <li>元素很多7</li>
+    <li>元素很多8</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //.eq(index)获取到的是jquery对象
+            //.get(index)获取到的是DOM对象
+
+            //获取的是jquery对象
+            $("div").eq(0).css({
+                //这里面的键值对,键可以带双引号或者单引号,也可以不带引号
+                //一些不合法的变量名字,可以使用加引号的方式来声明
+                "font-size":"40px"
+            })
+            var $div=$("div").eq(0);
+            console.log($div);
+
+            //获取的是DOM
+            //下面这句是错误的,因为.get(index)方法获取的是DOM,DOM对象没有css方法
+            $("div").get(1).css("font-size","40px");
+            var divDom=$("div").get(0);
+            console.log(divDom);
+        })
+    </script>
+</head>
+<body>
+    <div>
+        我是div1
+    </div>
+    <div>
+        我是div2
+    </div>
+    <div></div>
+</body>
+</html>
